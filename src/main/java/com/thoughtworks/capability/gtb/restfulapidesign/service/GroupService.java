@@ -35,10 +35,14 @@ public class GroupService {
             groupRepository.save(group);
         }
 
-        return null;
+        return groupRepository.getAllGroups();
     }
 
     public void updateGroupName(int id, String name) {
         groupRepository.updateGroupName(id,name);
+    }
+
+    public List<Group> checkGroup() {
+        return groupRepository.getAllGroups();
     }
 }

@@ -14,12 +14,16 @@ public class GroupController {
     public GroupController(GroupService groupService) {
         this.groupService = groupService;
     }
-    @GetMapping("/groupCount")
+    @GetMapping("/{groupCount}")
     public List<Group> randomPair(@PathVariable int groupCount){
         return groupService.randomPair(groupCount);
     }
     @PutMapping("/{id}")
     public void updateGroupName(@PathVariable int id,@RequestBody String name){
         groupService.updateGroupName(id,name);
+    }
+    @GetMapping
+    public List<Group> checkGroup(){
+        return groupService.checkGroup();
     }
 }

@@ -20,4 +20,8 @@ public class GroupRepository {
         group.setName(name);
         groupMap.put(id,group);
     }
+
+    public List<Group> getAllGroups() {
+        return new ArrayList<Group>(groupMap.values());
+    }
 }
