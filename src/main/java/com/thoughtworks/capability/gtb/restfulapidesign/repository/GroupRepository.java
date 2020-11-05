@@ -24,4 +24,8 @@ public class GroupRepository {
     public List<Group> getAllGroups() {
         return new ArrayList<Group>(groupMap.values());
     }
+
+    public Group getGroupById(int id) {
+        return groupMap.get(id);
+    }
 }

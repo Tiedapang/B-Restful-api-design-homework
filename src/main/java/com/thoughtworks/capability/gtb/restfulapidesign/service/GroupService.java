@@ -2,6 +2,7 @@ package com.thoughtworks.capability.gtb.restfulapidesign.service;
 
 import com.thoughtworks.capability.gtb.restfulapidesign.dto.Group;
 import com.thoughtworks.capability.gtb.restfulapidesign.dto.Student;
+import com.thoughtworks.capability.gtb.restfulapidesign.exception.GroupNotFoundException;
 import com.thoughtworks.capability.gtb.restfulapidesign.repository.GroupRepository;
 import com.thoughtworks.capability.gtb.restfulapidesign.repository.StudentRepository;
 import org.springframework.stereotype.Service;
@@ -39,6 +40,9 @@ public class GroupService {
     }
 
     public void updateGroupName(int id, String name) {
+        if(groupRepository.getGroupById(id) == null ){
+            throw new GroupNotFoundException("未找到对应分组");
+        }
         groupRepository.updateGroupName(id,name);
     }
 

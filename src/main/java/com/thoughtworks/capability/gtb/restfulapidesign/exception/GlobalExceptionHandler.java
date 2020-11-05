@@ -24,8 +24,16 @@ public class GlobalExceptionHandler {
         ErrorResult errorResult = new ErrorResult(ex.getMessage(),404);
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResult);
     }
-
-
+    @ExceptionHandler(GenderErrorException.class)
+    public ResponseEntity<ErrorResult> handlerGenderErrorException(GenderErrorException ex){
+        ErrorResult errorResult = new ErrorResult(ex.getMessage(),404);
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResult);
+    }
+    @ExceptionHandler(GroupNotFoundException.class)
+    public ResponseEntity<ErrorResult> handleGroupNotFoundException(GroupNotFoundException ex){
+        ErrorResult errorResult = new ErrorResult(ex.getMessage(),404);
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResult);
+    }
 
 
 }
