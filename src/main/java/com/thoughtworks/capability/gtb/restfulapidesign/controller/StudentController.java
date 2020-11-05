@@ -29,6 +29,11 @@ public class StudentController {
     public List<Student> getStudentsByGender(@RequestParam (required = false) String gender){
         return gender == "" ? studentService.getAll(): studentService.findStudentsByGender(gender);
     }
+    @GetMapping("/{id}")
+    public Student getStudentById(@PathVariable int id){
+        return studentService.getStudentById(id);
+    }
+
 
 
 

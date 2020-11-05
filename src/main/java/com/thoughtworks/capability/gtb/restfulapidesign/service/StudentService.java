@@ -26,4 +26,8 @@ public class StudentService {
         return studentRepository.findStudentByGender(gender);
 
     }
+
+    public Student getStudentById(int id) {
+        return studentRepository.getStudentById(id);
+    }
 }

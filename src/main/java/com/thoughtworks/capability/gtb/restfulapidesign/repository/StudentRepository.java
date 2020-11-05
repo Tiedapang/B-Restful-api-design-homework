@@ -27,4 +27,8 @@ public class StudentRepository {
     public List<Student> findStudentByGender(String gender) {
         return studentMap.values().stream().filter(student -> student.getGender()==gender).collect(Collectors.toList());
     }
+
+    public Student getStudentById(int id) {
+        return studentMap.get(id);
+    }
 }
