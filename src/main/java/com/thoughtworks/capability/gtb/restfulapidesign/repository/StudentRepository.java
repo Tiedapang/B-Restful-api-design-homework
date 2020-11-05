@@ -31,4 +31,10 @@ public class StudentRepository {
     public Student getStudentById(int id) {
         return studentMap.get(id);
     }
+
+    public void updateStudent(Student student) {
+        studentMap.put(student.getId(),student);
+
+    }
+
 }

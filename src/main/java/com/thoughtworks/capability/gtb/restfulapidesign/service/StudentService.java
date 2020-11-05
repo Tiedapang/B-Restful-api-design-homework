@@ -30,4 +30,10 @@ public class StudentService {
     public Student getStudentById(int id) {
         return studentRepository.getStudentById(id);
     }
+
+    public void updateStudent(int id, Student student) {
+        Student student1 = studentRepository.getStudentById(id);
+        student.setStudentNumber(student1.getStudentNumber());
+        studentRepository.updateStudent(student);
+    }
 }
